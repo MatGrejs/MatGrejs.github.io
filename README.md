@@ -11,3 +11,7 @@ https://github.com/USERNAME/USERNAME.github.io.git
     <p>This site will soon contain interactive data visualizations about crime in San Francisco.</p>
 </body>
 </html>
+
+git add index.html
+git commit -m "First page"
+git push
