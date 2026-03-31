@@ -194,6 +194,39 @@
     height: 300px;
   }
 }
+.viz-section {
+      margin: 3rem auto;
+      padding: 2rem;
+      background: #22223b;
+      border-radius: 16px;
+      max-width: 1000px;
+    }
+
+    .viz-grid {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .viz-plot {
+      max-width: 800px;
+      width: 100%;
+      margin: 1rem auto;
+    }
+
+    .viz-plot img,
+    .viz-plot iframe {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .viz-text {
+      max-width: 700px;
+      margin: 1rem auto;
+      color: #c9d1d9;
+    }
   </style>
 </head>
 <body>
@@ -251,28 +284,22 @@
     </div>
   </main>
 
-    <section class="viz-section">
-  <h2 class="section-title">Bar Plot Analysis</h2>
+ <section class="viz-section">
+  <h2 style="color:#16c79a;">Bar Plot Analysis</h2>
+
   <div class="viz-grid">
-    
-    <!-- Plot -->
+
+    <!-- PLOT -->
     <div class="viz-plot">
-      <img src="images/distribution.svg" alt="Bar plot" />
-      <!-- OR use iframe:
-      <iframe src="visualisations/bar_plot.html"></iframe>
-      -->
+      <img src="images/distribution.svg" alt="Bar plot">
     </div>
 
-    <!-- Text -->
+    <!-- TEXT -->
     <div class="viz-text">
       <h3>Insights</h3>
       <p>
-        This bar plot shows the distribution of crime categories in San Francisco. 
-        We observe that theft-related crimes dominate, followed by assault and burglary.
-      </p>
-      <p>
-        The distribution highlights how certain crime types are significantly more frequent, 
-        which can guide further analysis and policy focus.
+        This bar plot shows the distribution of crime categories in San Francisco.
+        Theft-related crimes dominate, followed by assault and burglary.
       </p>
     </div>
 
@@ -281,24 +308,21 @@
 
 
 <section class="viz-section">
-  <h2 class="section-title">Heatmap Analysis</h2>
+  <h2 style="color:#16c79a;">Heatmap Analysis</h2>
+
   <div class="viz-grid">
-    
-    <!-- Plot -->
+
+    <!-- PLOT -->
     <div class="viz-plot">
       <iframe src="visualisations/SF_prost_map.html"></iframe>
     </div>
 
-    <!-- Text -->
+    <!-- TEXT -->
     <div class="viz-text">
       <h3>Insights</h3>
       <p>
-        The heatmap visualizes crime density across San Francisco. Certain neighborhoods 
-        show clear clustering of incidents, indicating spatial concentration.
-      </p>
-      <p>
-        These hotspots may correlate with population density, commercial areas, or 
-        socio-economic factors, and are key areas for further investigation.
+        The heatmap shows where crime is concentrated across San Francisco.
+        Clear hotspots appear in central and high-activity areas.
       </p>
     </div>
 
