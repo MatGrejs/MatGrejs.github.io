@@ -1,14 +1,210 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My Data Viz Site</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SF Crime: Two Decades of Data</title>
+  <style>
+    :root {
+      --bg: #1a1a2e;
+      --panel: #22223b;
+      --panel-hover: #2b2b4a;
+      --text: #f5f7fa;
+      --muted: #c9d1d9;
+      --accent: #16c79a;
+      --accent-dark: #12a37d;
+      --border: rgba(255, 255, 255, 0.08);
+      --shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .container {
+      width: min(1100px, 92%);
+      margin: 0 auto;
+    }
+
+    header {
+      width: 100%;
+      padding: 4.5rem 0 3rem;
+      background: linear-gradient(180deg, rgba(22, 199, 154, 0.08), rgba(26, 26, 46, 0));
+      border-bottom: 1px solid var(--border);
+    }
+
+    .header-inner {
+      max-width: 800px;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      line-height: 1.15;
+      margin-bottom: 1rem;
+      color: var(--text);
+    }
+
+    .accent {
+      color: var(--accent);
+    }
+
+    .intro {
+      font-size: 1.05rem;
+      color: var(--muted);
+      max-width: 70ch;
+    }
+
+    main {
+      padding: 2.5rem 0 4rem;
+    }
+
+    .section-title {
+      font-size: 1.4rem;
+      margin-bottom: 1.25rem;
+      color: var(--accent);
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.25rem;
+      box-shadow: var(--shadow);
+      transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      background: var(--panel-hover);
+      border-color: rgba(22, 199, 154, 0.35);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35);
+    }
+
+    .card h3 {
+      font-size: 1.15rem;
+      margin-bottom: 0.5rem;
+      color: var(--text);
+    }
+
+    .card p {
+      font-size: 0.97rem;
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+
+    .card a {
+      display: inline-block;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.2s ease, transform 0.2s ease;
+    }
+
+    .card a:hover {
+      color: #7fffd4;
+      transform: translateX(2px);
+    }
+
+    footer {
+      padding: 1.5rem 0 2.5rem;
+      color: var(--muted);
+      font-size: 0.9rem;
+      border-top: 1px solid var(--border);
+    }
+
+    @media (max-width: 600px) {
+      header {
+        padding: 3.25rem 0 2.25rem;
+      }
+
+      .card {
+        padding: 1rem;
+      }
+
+      .intro {
+        font-size: 1rem;
+      }
+    }
+  </style>
 </head>
 <body>
-    <h1>San Francisco crime data</h1>
-    <p>This site will soon contain interactive data visualizations about crime in San Francisco.</p>
+  <header>
+    <div class="container header-inner">
+      <h1>SF Crime: <span class="accent">Two Decades of Data</span></h1>
+      <p class="intro">
+        This portfolio explores patterns, shifts, and hotspots in San Francisco crime data across the last twenty years. 
+        It brings together interactive visuals and focused analyses to show how crime changes over time, across neighborhoods, and by offense type.
+      </p>
+    </div>
+  </header>
 
-    <img src="./images/distribution.svg" alt="TEsTIGN" style="max-width: 100%;">
+  <main>
+    <div class="container">
+      <h2 class="section-title">Portfolio Projects</h2>
 
-    <iframe src="./visualisations/SF_prost_map.html" width="100%" height="600" frameborder="0"></iframe>
+      <section class="card-grid">
+        <article class="card">
+          <h3>Crime Trends Over Time</h3>
+          <p>A year-by-year view of how reported crime has changed across two decades.</p>
+          <a href="#">View analysis</a>
+        </article>
+
+        <article class="card">
+          <h3>Neighborhood Hotspots</h3>
+          <p>An interactive map highlighting where crime is most concentrated in the city.</p>
+          <a href="#">Explore map</a>
+        </article>
+
+        <article class="card">
+          <h3>Category Breakdown</h3>
+          <p>A comparison of major offense types and how their patterns differ over time.</p>
+          <a href="#">See categories</a>
+        </article>
+
+        <article class="card">
+          <h3>Seasonal Patterns</h3>
+          <p>A look at how crime varies by month, season, and recurring annual cycles.</p>
+          <a href="#">Open chart</a>
+        </article>
+
+        <article class="card">
+          <h3>Day and Hour Analysis</h3>
+          <p>A timeline of when incidents are most likely to happen during the week.</p>
+          <a href="#">View timing data</a>
+        </article>
+
+        <article class="card">
+          <h3>District Comparison</h3>
+          <p>A side-by-side overview of crime levels across police districts in San Francisco.</p>
+          <a href="#">Compare districts</a>
+        </article>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      Data science portfolio focused on long-term crime patterns in San Francisco.
+    </div>
+  </footer>
 </body>
 </html>
